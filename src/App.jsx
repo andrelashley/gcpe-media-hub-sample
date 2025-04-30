@@ -1,35 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const contacts = [
+    {
+      id: 1,
+      name: "John Doe",
+    },
+    {
+      id: 2,
+      name: "Jane Doe",
+    }
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>GCPE Media Hub Sample</h1>
+      {contacts.length === 0 ? 
+        <p>There are no contacts.</p> 
+      :
+      contacts.map(contact => {
+          return(
+          <p key={contact.id}>
+            <b>{contact.name}</b>
+          </p>
+          );
+        })
+      }
     </>
-  )
+  );
 }
-
-export default App
