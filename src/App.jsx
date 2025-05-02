@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 
 export default function App() {
   const contacts = [
@@ -14,15 +15,23 @@ export default function App() {
 
   return (
     <>
-      <h1>GCPE Media Hub Sample</h1>
       {contacts.length === 0 ? 
         <p>There are no contacts.</p> 
       :
       contacts.map(contact => {
           return(
-          <p key={contact.id}>
-            <b>{contact.name}</b>
-          </p>
+            <>
+            <Header />
+              <div className="container" style={{ display: 'flex', minHeight: '100vh' }}>
+            <Sidebar />
+            <div style={{ flexGrow: 1, padding: '1rem' }}>
+              <p key={contact.id}>
+                <b>{contact.name}</b>
+              </p>
+            </div>
+          </div>
+            </>
+            
           );
         })
       }
