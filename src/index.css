@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+#header {
+    display: flex;
+    height: 56px;
+    padding: 8px var(--margin, 80px);
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-bottom: 2px solid #ccc;
+}
+
+#pageHeading {
+    display: flex;
+    padding: 8px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gutter, 24px);
+    align-self: stretch;
+}

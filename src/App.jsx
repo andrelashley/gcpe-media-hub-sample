@@ -15,26 +15,16 @@ export default function App() {
 
   return (
     <>
-      {contacts.length === 0 ? 
-        <p>There are no contacts.</p> 
-      :
-      contacts.map(contact => {
-          return(
-            <>
             <Header />
               <div className="container" style={{ display: 'flex', minHeight: '100vh' }}>
             <Sidebar />
             <div style={{ flexGrow: 1, padding: '1rem' }}>
-              <p key={contact.id}>
-                <b>{contact.name}</b>
-              </p>
+              <div id='pageHeading'><h1>Media Contacts</h1></div>
+              {contacts.map(contact => {
+                return <p key={contact.id}>{contact.name}</p>
+              })}
             </div>
-          </div>
-            </>
-            
-          );
-        })
-      }
+          </div>    
     </>
   );
 }
