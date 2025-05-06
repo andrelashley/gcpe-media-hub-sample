@@ -1,16 +1,12 @@
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import ContactsTable from "./components/ContactsTable";
 
 export default function App() {
   const contacts = [
-    {
-      id: 1,
-      name: "John Doe",
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-    }
+    { id: 1, name: "John Doe", email: "john@example.com" },
+    { id: 2, name: "Jane Doe", email: "jane@example.com" },
+    { id: 3, name: "Andre L.", email: "andre@mediahub.ca" },
   ];
 
   return (
@@ -20,9 +16,7 @@ export default function App() {
             <Sidebar />
             <div style={{ flexGrow: 1, padding: '1rem' }}>
               <div id='pageHeading'><h1>Media Contacts</h1></div>
-              {contacts.map(contact => {
-                return <p key={contact.id}>{contact.name}</p>
-              })}
+              <ContactsTable data={contacts} />
             </div>
           </div>    
     </>
